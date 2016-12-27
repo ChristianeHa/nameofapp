@@ -1,0 +1,63 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Table */
+
+td, th {
+	padding: 25px;
+}
+
+/* Specific Rules */
+
+.newProduct {
+	padding-top: 40px;
+}
+
+.newProduct p {
+    margin-left: 0px;
+}
+
+.contentProducts {
+	text-align: center;
+}
+
+/* Buttons */
+
+.btn-default {
+    color: #fff;
+    background-color: #4dde44;
+    width: 150px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.btn-default.focus, 
+.btn-default:focus,
+.btn-default:hover {
+    color: #fff;
+    background-color: #1f8019;
+}
+
+
+input[type="button" i], 
+input[type="submit" i], 
+input[type="reset" i], 
+input[type="file" i]::-webkit-file-upload-button, button {
+	border: 0px;
+}
+
+/* Text Fields */
+
+#product_description {
+    width: 400px;
+    height: 150px;
+}
+
+#product_name,
+#product_image_url {
+    width: 400px;
+}
+
+
+
