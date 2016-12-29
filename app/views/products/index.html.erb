@@ -13,7 +13,7 @@
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="bikeProduct">
           <div class="bikeImage">
-            <p><%= image_tag("bike2.png", class: "img-responsive my-image", width: '500', data: { title: 'Bike' } ) %></p>
+            <p><%= image_tag(product.image_url, class: "img-responsive my-image" ) %></p>
           </div>
           <div class="productAttributes">
             <p id="productName"><strong><%= product.name %></strong></p>
