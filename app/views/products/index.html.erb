@@ -13,7 +13,9 @@
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="bikeProduct">
           <div class="bikeImage">
-            <p><%= image_tag(product.image_url, class: "img-responsive my-image" ) %></p>
+            <% if product.image_url %>
+              <p><%= image_tag(product.image_url, class: "img-responsive my-image" ) %></p>
+            <% end %>
           </div>
           <div class="productAttributes">
             <p id="productName"><strong><%= product.name %></strong></p>
