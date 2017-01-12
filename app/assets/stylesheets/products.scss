@@ -60,7 +60,6 @@ input[type="file" i]::-webkit-file-upload-button, button {
 
 .bikeProduct {
     border: 1px solid lightgrey;
-    margin-bottom: 15px;
 }
 
 .bikeImage {
@@ -73,7 +72,6 @@ input[type="file" i]::-webkit-file-upload-button, button {
     text-align: right;
     color: #4dde44;
 }
-
 
 .bikeProduct .img-responsive {
     height: 130px;
@@ -110,8 +108,8 @@ input[type="file" i]::-webkit-file-upload-button, button {
     margin-bottom: 10px;
 }
 
-.col-md-4 .bikeProduct{
+.bikeWrapper {
     height: 306px;
-    
+    margin-bottom: 15px;
 }
 
