@@ -1,5 +1,6 @@
 <div class="container">
 
+	<%= link_to 'Back to Products', products_path %>
 	<h1>Editing Product</h1>
 
 	<div class="contentProducts">
@@ -8,8 +9,7 @@
 
 		<%= render 'form', product: @product %>
 
-		<%= link_to 'Show', @product %> |
-		<%= link_to 'Back', products_path %>
+		<%= link_to 'Back', @product %>
 	</div>
 
 </div>

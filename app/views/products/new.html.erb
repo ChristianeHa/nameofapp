@@ -1,4 +1,6 @@
 <div class="container">
+	<%= link_to 'Back', products_path %>
+	
 	<h1>New Product</h1>
 
 	<div class="contentProducts">
@@ -6,8 +8,6 @@
 		<p>Do you want to sell your bike? Just give us a few information about it!</p>
 
 		<%= render 'form', product: @product %>
-
-		<%= link_to 'Back', products_path %>
 
 	</div>
 </div>

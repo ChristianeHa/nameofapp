@@ -12,7 +12,7 @@
             <div class="productAttributes">
               <p id="productName"><strong><%= product.name %></strong></p>
               <div class="productDescription">
-                <p><%= product.description %> <a href=#>More... </a></p><br>
+                <p><%= truncate(product.description, lenght: 50) %> <%= link_to 'Show', product %></p><br>
               </div>
               <p>Color: <%= product.colour %></p>
               <p class="pricetag"><strong>$ <%= product.price %></strong></p>
