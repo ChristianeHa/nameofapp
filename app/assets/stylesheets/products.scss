@@ -88,10 +88,6 @@ input[type="file" i]::-webkit-file-upload-button, button {
     text-align: center;
 }
 
-.productDescription p a {
-    color: grey;
-}
-
 .productAttributes {
     padding-bottom: 15px;
     border-top: 1px solid lightgrey;
@@ -113,12 +109,41 @@ input[type="file" i]::-webkit-file-upload-button, button {
     margin-bottom: 15px;
 }
 
+a :hover,
+a :active,
+a :focus,
+a :visited {
+    text-decoration: none;
+    color: grey;
+}
+
+a .pricetag :hover,
+a .pricetag :active,
+a .pricetag :focus,
+a .pricetag :visited {
+    color: #4dde44;
+}
+
 /* Show Product */
 
 .showImage,
 .showDescription {
     margin: 0 auto;
     width: 700px;
+}
+
+.nextProduct {
+    display: inline-block;
+    float: right;
+}
+
+.previousProduct {
+    display: inline-block;
+    float: left;
+}
+
+.clearing {
+    clear: both;
 }
 
 
