@@ -40,9 +40,8 @@ code {
 
 /* Navigation */
 
-.navigation {
+.navigationItems {
   display: inline;
-  float: left;
 }
 
 .navbar>.container .navbar-brand, 
@@ -69,7 +68,6 @@ code {
 .search {
   display: inline;
   float: right;
-  margin-top: 20px;
 }
 
 .searchButton {
