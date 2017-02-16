@@ -69,6 +69,7 @@ code {
 .search {
   display: inline;
   float: right;
+  margin-top: 20px;
 }
 
 .searchButton {
@@ -123,10 +124,24 @@ body {
   text-align: center;
 }
 
-.contactForm {
-  margin: 0 auto;
+input[type="submit" i] {
+  color: white;
+  background-color: #4dde44;
+    width: 150px;
+    height: 35px;
+    border-radius: 5px;
 }
 
+.contactForm {
+  text-align: center;
+}
 
+textarea.form-control {
+  height: 200px;
+}
+
+.address p {
+  margin: 5px;
+}
 
 

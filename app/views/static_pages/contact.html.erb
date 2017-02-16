@@ -1,36 +1,52 @@
 <div class= "container contactDetails">
 
 	<h1>Contact us</h1>
+
 	<p>We are happy to hear from you!<br></p>
-	<p>3B - Berlin Best Bikes<br>
-	Berliner Allee 123<br>
-	10115 Berlin<br>
-	0170 1234567899<br>
-	3b@bmail.com</p>
 
 	<%= flash[:notice] %>
 
 	<div class="contactForm">
 
 		<%= form_tag("/static_pages/thank_you") do %>
+
 		<div class="row">
-		  <div class="col-md-4">
+		  
+		  <div class="col-md-8">
 		    <div class="form-group">
 		      <%= label_tag :name %>
 		      <%= text_field_tag :name, nil, class: "form-control", placeholder: "Enter Name" %>
 		    </div>      
 		    <div class="form-group">
 		      <%= label_tag :email, "Email Address" %>
-		      <%= text_field_tag :email, nil, class: "form-control", placeholder: "Enter Email" %>
+		      <%= email_field_tag :email, nil, class: "form-control", placeholder: "Enter Email" %>
 		    </div>
 		    <div class="form-group">
 		      <%= label_tag :message %>
 		      <%= text_area_tag :message, nil, class: "form-control", placeholder: "Enter Message" %>
+		      <small id="messageHelper" class="text-muted">Your comments, queries etc.</small><br><br>
+		      <%= submit_tag "Send"%>  
+
+
 		    </div>      
 		  </div>
+
+		  <div class="col-md-4 address">
+		  		<p>You can find us here:</p><br>
+				<p>Berlin Best Bikes</p>
+				<p>Berliner Allee 123</p>
+				<p>Berlin, Germany</p><br>
+				<p>+49 12345678910</p>
+				<p>mail@bbb.com</p>
+
+			</div>
+
+
 		</div>
-		<%= submit_tag "Send" %>   
+		 
+		
 		<% end %>
+
 
 	</div>
 
