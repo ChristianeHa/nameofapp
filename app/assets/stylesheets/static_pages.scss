@@ -63,6 +63,17 @@ code {
     font-weight: bold;
 }
 
+.pull-right li a,
+.pull-right li a :hover {
+  color: white;
+  background-color: #222222;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: #222222;
+}
+
 /* Search Form */
 
 .search {

@@ -1,0 +1,32 @@
+.login {
+	
+	max-width: 330px;
+	padding: 15px;
+	margin: 0 auto;
+
+}
+
+.login input[type="email"],
+.login input[type="password"],
+.login input[type="submit"] {
+	
+	width: 100%;
+	height: 35px;
+	padding: 10px;
+
+}
+
+.login input[type="email"]{
+	margin-bottom: -1px;	
+}
+
+.login .field {
+	margin-bottom: 0px;
+}
+
+.login input[type="checkbox"],
+#passwordReminder {
+	margin-top: 10px;
+	margin-bottom: 10px; 
+	display: inline-block;
+}
