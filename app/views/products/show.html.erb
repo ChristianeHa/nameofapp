@@ -65,9 +65,14 @@
 
 	<h2>Comments</h2>
 
+	<% @comments = Comment.paginate(:page => params[:page])%>
+
+
 	<%= render 'new_comment', comment: @comment %>
 	<%= render 'comments', comment: @comment %>
 
+	
+	<%= will_paginate @comments %>
 	
 
 </div>

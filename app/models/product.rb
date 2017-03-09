@@ -1,6 +1,9 @@
 class Product < ApplicationRecord
+
 	has_many :orders
 	has_many :comments
+
+	validates :name, presence: true
 
 	def next
 		Product.where("id > ?", id).first
