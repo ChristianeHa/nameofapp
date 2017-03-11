@@ -65,10 +65,11 @@
 
 	<h2>Comments</h2>
 
-	<% @comments = Comment.paginate(:page => params[:page])%>
 
 
 	<%= render 'new_comment', comment: @comment %>
+
+	<% @comments = Comment.paginate(:page => params[:page])%>
 	<%= render 'comments', comment: @comment %>
 
 	
