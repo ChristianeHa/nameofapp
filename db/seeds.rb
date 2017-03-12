@@ -16,9 +16,9 @@ Product.create(:name => "White City Bike", :description => "Cool city bike for w
 Product.create(:name => "City hopper", :description => "Stylish city bike in sky blue.", :colour => "blue", :price => "70", :image_url => "bike6.jpg")
 
 
-User.create(:first_name => "Max", :last_name => "Mustermann", :email => "maxmustermann@example.de", :encrypted_password => "Christiane", :admin => "true")
+#User.create(:first_name => "Max", :last_name => "Mustermann", :email => "maxmustermann@example.de", :encrypted_password => "Christiane", :admin => "true")
 
 
-Comment.create!(user: User.first, product: Product.first, rating: 1, body: "bad")
-Comment.create!(user: User.first, product: Product.first, rating: 4, body: "nice")
-Comment.create!(user: User.first, product: Product.first, rating: 2, body: "meh")
+#Comment.create!(user: User.first, product: Product.first, rating: 1, body: "bad")
+#Comment.create!(user: User.first, product: Product.first, rating: 4, body: "nice")
+#Comment.create!(user: User.first, product: Product.first, rating: 2, body: "meh")
