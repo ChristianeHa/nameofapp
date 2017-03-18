@@ -7,7 +7,12 @@ describe User do
 	end
 
 	it "returns only an email" do
-		expect(User.new(email: "maxmustermann@web.de")).not_to be_valid
+		expect(User.new(email: "piabauer@example.de")).not_to be_valid
+	end
+
+	it "sould not validate users without an email address" do
+		@user = FactoryGirl.build(:user, email: "not_an_email")
+		expect(@user).to_not be_valid
 	end
 
 
