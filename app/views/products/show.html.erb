@@ -54,6 +54,9 @@
 				<p class= "pricetag"><span class="glyphicon glyphicon-euro" aria-hidden="true">
 				  <%= @product.price %>
 				</p>
+				<%= form_tag "/payments/create" do %> 
+					<%= render partial: "devise/shared/stripe_checkout_button" %>
+				<% end %>
 
 			</div>
 		</div>
