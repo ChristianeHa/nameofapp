@@ -4,6 +4,5 @@
   data-name= <%= @product.name %>
   data-description= <%= truncate(@product.description, lenght: 10) %>
   <% @newprice = @product.price * 100%>
-  data-amount= <%= @newprice %>
-  <% hidden_field_tag(:product_id, @product.id)%>>
+  data-amount= <%= @newprice %>>
 </script>
