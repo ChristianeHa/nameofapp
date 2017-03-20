@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
   def index
     if params[:q]
       search_term = params[:q]
+      logger.debug "Search term: #{search_term}"
       @products = Product.search(search_term)
       # return to filtered list with search tag
     else
@@ -21,6 +22,7 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
+    byebug
     @product = Product.new
   end
 
@@ -61,6 +63,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
+    logger.debug "Product still exists: #{@product.name}"
     @product.destroy
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }

@@ -7,7 +7,7 @@
 	<%= link_to 'Next >>', @product.next, :class => "nextProduct"%>
 	<div class= "clearing">
 
-
+	<% logger.debug "Product name: #{@product.name}"%>
 	<h1><%= @product.name %> </h1>
 
 	<div class="editProduct">
@@ -27,6 +27,8 @@
 		<div class="col-md-6 col-xs-12">
 
 			<div class= "showDescription">
+
+				<% logger.debug "Product Description: #{@product.description}"%>
 		
 				<p><%= @product.description %></p>
 
@@ -37,6 +39,7 @@
 
 				<p class="averageRating">Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
 
+				<% logger.debug "Comments present: #{@product.comments.present?}"%>
 				<% if @product.comments.present? %>
 
 					<div class="row">

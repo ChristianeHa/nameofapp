@@ -12,6 +12,8 @@
               <% end %>
               </div>
               <div class="productAttributes">
+
+              <% logger.debug "Product: #{product.name}"%>
                 <p id="productName"><strong><%= product.name %></strong></p>
                 <div class="productDescription">
                   <p><%= truncate(product.description, lenght: 50) %> </p><br>
