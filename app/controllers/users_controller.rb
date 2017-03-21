@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
   load_and_authorize_resource
 
+  include Recaptcha::Verify
+
   # GET /users
   # GET /users.json
   def index
