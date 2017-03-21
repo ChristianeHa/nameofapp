@@ -34,11 +34,7 @@ class UsersController < ApplicationController
 
     @user = User.new(params[:user].permit(:name))
     if verify_recaptcha(model: @user) && @user.save
-    else
-      format.html { redirect_to @user, notice: 'Are you sure you are not a robot?' }
-    end
-
-    respond_to do |format|
+      respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
@@ -47,6 +43,10 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+    else
+      format.html { redirect_to @user, alert: 'Are you sure you are not a robot?' }
+    end
+
   end
 
   # PATCH/PUT /users/1
