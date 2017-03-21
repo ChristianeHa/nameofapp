@@ -20,13 +20,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new(params[:user].permit(:name))
-    if verify_recaptcha(model: @user) && @user.save
-      redirect_to @user
-    else
-      render 'new'
-    end
-    #@user = User.new
+    @user = User.new
   end
 
   # GET /users/1/edit
@@ -36,7 +30,13 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    #@user = User.new(user_params)
+
+    @user = User.new(params[:user].permit(:name))
+    if verify_recaptcha(model: @user) && @user.save
+    else
+      format.html { redirect_to @user, notice: 'Are you sure you are not a robot?' }
+    end
 
     respond_to do |format|
       if @user.save
