@@ -7,9 +7,7 @@
       <div class="rating"></div>
     </p>  
     <p>
-      <%= f.text_area :body, class: "form-control", rows: "5", placeholder: "Your comment ... How did you find the product? What do you like? What don't you like?" %>
-      <% Sanitize.fragment(:body, Sanitize::Config::RESTRICTED)%>
-      
+      <%= f.text_area :body, class: "form-control", rows: "5", placeholder: "Your comment ... How did you find the product? What do you like? What don't you like?" %>     
     </p>
     
     <p>
