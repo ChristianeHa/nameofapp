@@ -20,7 +20,7 @@
 		<div class="col-md-6 col-xs-12">
 
 			<p>
-			  <%= image_tag(@product.image_url, class: "img-responsive my-image showImage" ) %>
+			  <%= image_tag(@product.image_url, class: "img-responsive my-image showImage img-zoom", data_zoom_image: "large/#{@product.image_url}" ) %>
 			</p>
 		</div>
 

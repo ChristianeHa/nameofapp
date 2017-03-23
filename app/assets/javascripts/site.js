@@ -1,4 +1,6 @@
 $(document).on('turbolinks:load', function(){
+
+	//Raty
     $('.rating').raty({ path: '/assets', scoreName: 'comment[rating]'});
 
     $('.rated').raty({ path: '/assets',
@@ -7,4 +9,8 @@ $(document).on('turbolinks:load', function(){
         return $(this).attr('data-score');
       }
     });
+
+    //Zoom Plugin for Product Pictures
+
+    $('.img-zoom').elevateZoom();
 });
