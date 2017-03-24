@@ -37,7 +37,7 @@
 				  <%= @product.colour %>
 				</p>
 
-				<p class="averageRating">Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+				<p class="averageRating">Average Rating: <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div> </p>
 
 				<% logger.debug "Comments present: #{@product.comments.present?}"%>
 				<% if @product.comments.present? %>
