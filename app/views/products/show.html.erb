@@ -3,6 +3,11 @@
 	<p id="notice"><%= notice %></p>
 	<%= link_to 'Back to Products', products_path %><br><br>
 
+<% Rails.cache.write(@product, @product.cache_key) %>
+<% puts Rails.cache.read(@product) %>
+
+<% cache @product do %>
+
 	<%= link_to '<< Previous', @product.prev, :class => "previousProduct" %>
 	<%= link_to 'Next >>', @product.next, :class => "nextProduct"%>
 	<div class= "clearing">
@@ -68,6 +73,8 @@
 
 	</div>
 
+<% end %>	
+
 
 	<h2>Comments</h2>
 
@@ -80,6 +87,6 @@
 
 	
 	<%= will_paginate @comments %>
-	
+
 
 </div>

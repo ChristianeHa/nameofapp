@@ -5,6 +5,8 @@
 
   	<div class="bikeWrapper">
 
+      <% cache product do %>
+
       	<div class="bikeProduct">
           	<div class="bikeImage">
               <% if product.image_url %>
@@ -22,6 +24,8 @@
                 <p class="pricetag"><strong>$ <%= product.price %></strong></p>
               </div>
           </div>
+
+        <% end %>
 
       </div>
 
