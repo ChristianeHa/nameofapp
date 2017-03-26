@@ -3,8 +3,8 @@
 	<p id="notice"><%= notice %></p>
 	<%= link_to 'Back to Products', products_path %><br><br>
 
-<% Rails.cache.write(@product, @product.cache_key) %>
-<% puts Rails.cache.read(@product) %>
+<% Rails.cache.write('name-#{@product.id}', @product.name) %>
+<% puts Rails.cache.read('name-#{@product.id}') %>
 
 <% cache @product do %>
 
@@ -12,7 +12,6 @@
 	<%= link_to 'Next >>', @product.next, :class => "nextProduct"%>
 	<div class= "clearing">
 
-	<% logger.debug "Product name: #{@product.name}"%>
 	<h1><%= @product.name %> </h1>
 
 	<div class="editProduct">
@@ -32,8 +31,6 @@
 		<div class="col-md-6 col-xs-12">
 
 			<div class= "showDescription">
-
-				<% logger.debug "Product Description: #{@product.description}"%>
 		
 				<p><%= @product.description %></p>
 
@@ -75,10 +72,10 @@
 
 <% end %>	
 
+<h6> Views: <span><%= @product.view %> </span></h6>
+
 
 	<h2>Comments</h2>
-
-
 
 	<%= render 'new_comment', comment: @comment %>
 
