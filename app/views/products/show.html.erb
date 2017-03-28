@@ -80,6 +80,7 @@
 	<%= render 'new_comment', comment: @comment %>
 
 	<% @comments = @comments.paginate(:page => params[:page])%>
+	<div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
 	<%= render 'comments', comment: @comment %>
 
 	
