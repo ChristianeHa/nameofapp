@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <h1>Users</h1>
 
@@ -13,9 +12,12 @@
 
   <tbody>
     <% @users.each do |user| %>
+    <% $redis.set("firstname-#{user.id}", user.first_name) %>
+    <% $redis.set("lastname-#{user.id}", user.last_name) %>
+
       <tr>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
+        <td><%= $redis.get("firstname-#{user.id}") %></td>
+        <td><%= $redis.get("lastname-#{user.id}") %></td>
         <td><%= user.email %></td>
 
         <td><%= link_to 'Show', user %></td>
