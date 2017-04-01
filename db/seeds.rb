@@ -7,9 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Product.create(:name => "City Bike", :description => "Light and reliable city cruiser model", :colour => "black", :price => "50", :image_url => "bike1.jpg")
-Product.create(:name => "Classic White Bike", :description => "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.", :colour => "white", :price => "50
-
-	78", :image_url => "bike3.jpg")
+Product.create(:name => "Classic White Bike", :description => "Very nice, old styled city bike.", :colour => "white", :price => "50", :image_url => "bike3.jpg")
 Product.create(:name => "Red City Bike", :description => "Elegant city bike for ladies.", :colour => "red", :price => "50", :image_url => "bike2.jpg")
 Product.create(:name => "Classic Bike", :description => "Bike for trendy people.", :colour => "yellow", :price => "55", :image_url => "bike4.jpg")
 Product.create(:name => "White City Bike", :description => "Cool city bike for women.", :colour => "white", :price => "100", :image_url => "bike5.jpg")

@@ -20,7 +20,7 @@
                 <div class="productDescription">
                   <p><%= truncate(product.description, lenght: 50) %> </p><br>
                 </div>
-                <p>Color: <%= product.colour %></p>
+                <div class="rated ratingindex" id="average-rating" data-score="<%= product.average_rating %>"></div>
                 <p class="pricetag"><strong>$ <%= product.price %></strong></p>
               </div>
           </div>
