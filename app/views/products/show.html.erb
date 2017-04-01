@@ -1,6 +1,5 @@
 <div class="container">
 
-	<p id="notice"><%= notice %></p>
 	<%= link_to 'Back to Products', products_path %><br><br>
 
 <% Rails.cache.write('name-#{@product.id}', @product.name) %>
