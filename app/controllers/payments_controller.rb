@@ -4,6 +4,8 @@ class PaymentsController < ApplicationController
 		@user = current_user
 		token = params[:stripeToken]
     @newprice = @product.price * 100
+
+    protect_from_forgery with: :null_session
   		# Create the charge on Stripe's servers - this will charge the user's card
   		begin
     		charge = Stripe::Charge.create(
