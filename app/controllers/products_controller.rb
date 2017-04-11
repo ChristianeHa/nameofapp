@@ -5,8 +5,10 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     if params[:q]
+      @isSearching = true
       search_term = params[:q]
       @products = Product.search(search_term)
+
       # return to filtered list with search tag
     else
       @products = Product.all

@@ -11,7 +11,8 @@ class PaymentsController < ApplicationController
       			:amount => @newprice, # amount in cents, again
       			:currency => "EUR",
       			:source => token,
-      			:description => params[:stripeEmail]
+      			:description => params[:stripeEmail],
+            :receipt_email => current_user.email
     		)
 
         if charge.paid

@@ -2,7 +2,9 @@
   src="https://checkout.stripe.com/checkout.js" class="stripe-button"
   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
   data-name= <%= @product.name %>
+  data-email= <%= current_user.email %>
   data-description= <%= truncate(@product.description, lenght: 10) %>
   <% @newprice = @product.price * 100%>
   data-amount= <%= @newprice %>>
+
 </script>
