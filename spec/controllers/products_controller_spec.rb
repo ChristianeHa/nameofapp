@@ -63,15 +63,9 @@ describe ProductsController, :type => :controller do
 
   end
   
-
   context 'POST #create' do
     before do
-      @producttwo = FactoryGirl.create(:product)
-    end
-
-    it 'responds successfully with an HTTP 200 status code' do
-      expect(response).to be_success
-      expect(response).to have_http_status(200)
+      post :create, product: FactoryGirl.attributes_for(:product)
     end
 
     it 'redirects to product overview' do
@@ -79,8 +73,7 @@ describe ProductsController, :type => :controller do
     end
 
     it 'creates new product' do
-      expect(@producttwo).to be_truthy
-
+      expect{post :create, product: FactoryGirl.attributes_for(:product)}.to change(Product, :count).by(1)
     end
 
   end
@@ -88,8 +81,8 @@ describe ProductsController, :type => :controller do
   context 'PUT #update' do
     before do
       @producttwo = FactoryGirl.create(:product)
-      #@producttwo.update(:name => 'Best bike')
-      put :update, id: @producttwo, producttwo: @producttwo
+      @updated_attributes = { :name => "Classic Bike"}
+      put :update, id: @producttwo, product: @updated_attributes
       @producttwo.reload
     end
     
@@ -99,22 +92,24 @@ describe ProductsController, :type => :controller do
 
 
     it 'updated name successfully' do
-        expect(@producttwo.name).to eq("Best bike")   
+        expect(@producttwo).to have_attributes(:name => "Classic Bike")
     end
-    
+
   end
 
   context 'DELETE #destroy' do
-    before do
+    before :each do
       @productthree = FactoryGirl.create(:product)
-      delete :destroy, id: @productthree
-    end
-
-    it 'redirects to product overview' do
-          expect(response).to redirect_to(products_path)
+      
     end
 
     it 'deletes the product' do
+        expect{delete :destroy, id: @productthree}.to change(Product, :count).by(-1)
+    end
+
+    it 'redirects to product overview' do
+        delete :destroy, id: @productthree
+        expect(response).to redirect_to(products_path)
     end
 
 

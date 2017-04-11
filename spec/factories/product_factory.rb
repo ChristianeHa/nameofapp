@@ -17,4 +17,12 @@ FactoryGirl.define do
     price "40"
   end
 
+  factory :productthree do
+    name "Blue bike"
+    description "Blue bike"
+    image_url "bike3.jpg"
+    colour "blue"
+    price "60"
+  end
+
 end
