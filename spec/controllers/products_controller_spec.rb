@@ -24,11 +24,10 @@ describe ProductsController, :type => :controller do
 
   context 'GET #show' do
     before do
-      get :show
+      get :show, id: @product.id
     end
 
   	it 'loads correct product detail' do
-  		get :show, id: @product.id
   		expect(response).to have_http_status(200)
   		expect(assigns(:product)).to eq @product
   	end
@@ -53,7 +52,7 @@ describe ProductsController, :type => :controller do
 
 	 context 'GET #edit' do
      before do
-      get :edit
+      get :edit, id: @product.id
     end
 
   	it 'loads correct product detail' do
@@ -65,20 +64,61 @@ describe ProductsController, :type => :controller do
   end
   
 
-  describe 'POST #create' do
+  context 'POST #create' do
+    before do
+      @producttwo = FactoryGirl.create(:product)
+    end
 
+    it 'responds successfully with an HTTP 200 status code' do
+      expect(response).to be_success
+      expect(response).to have_http_status(200)
+    end
+
+    it 'redirects to product overview' do
+        expect(response).to redirect_to(products_path)
+    end
+
+    it 'creates new product' do
+      expect(@producttwo).to be_truthy
+
+    end
 
   end
 
-  describe 'PATCH #update' do
+  context 'PUT #update' do
+    before do
+      @producttwo = FactoryGirl.create(:product)
+      #@producttwo.update(:name => 'Best bike')
+      put :update, id: @producttwo, producttwo: @producttwo
+      @producttwo.reload
+    end
+    
+    it 'redirects to single product overview' do
+        expect(response).to redirect_to(product_path)
+    end
+
+
+    it 'updated name successfully' do
+        expect(@producttwo.name).to eq("Best bike")   
+    end
+    
+  end
+
+  context 'DELETE #destroy' do
+    before do
+      @productthree = FactoryGirl.create(:product)
+      delete :destroy, id: @productthree
+    end
+
+    it 'redirects to product overview' do
+          expect(response).to redirect_to(products_path)
+    end
+
+    it 'deletes the product' do
+    end
 
 
   end
-
-  describe 'DELETE #destroy' do
-
-  end
-
 
 
 
