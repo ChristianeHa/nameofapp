@@ -7,8 +7,12 @@ describe ProductsController, :type => :controller do
   end
 
 	context 'GET #index' do
-    before do
+    subject {
       get :index
+    }
+
+    before do
+      subject
     end
 
     it 'responds successfully with an HTTP 200 status code' do
@@ -23,8 +27,12 @@ describe ProductsController, :type => :controller do
 
 
   context 'GET #show' do
-    before do
+    subject {
       get :show, id: @product.id
+    }
+
+    before do
+      subject
     end
 
   	it 'loads correct product detail' do
@@ -36,8 +44,12 @@ describe ProductsController, :type => :controller do
 
 
   context 'GET #new' do
-    before do
+    subject {
       get :new
+    }
+
+    before do
+      subject
     end
 
     it 'responds successfully with an HTTP 200 status code' do
@@ -51,12 +63,16 @@ describe ProductsController, :type => :controller do
   end
 
 	 context 'GET #edit' do
-     before do
+    subject {
       get :edit, id: @product.id
+    }
+
+    before do
+      subject
     end
 
   	it 'loads correct product detail' do
-  		get :edit, id: @product.id
+  		subject
   		expect(response).to have_http_status(200)
   		expect(assigns(:product)).to eq @product
   	end
@@ -64,8 +80,12 @@ describe ProductsController, :type => :controller do
   end
   
   context 'POST #create' do
-    before do
+    subject {
       post :create, product: FactoryGirl.attributes_for(:product)
+    }
+
+    before do
+      subject
     end
 
     it 'redirects to product overview' do
@@ -73,18 +93,23 @@ describe ProductsController, :type => :controller do
     end
 
     it 'creates new product' do
-      expect{post :create, product: FactoryGirl.attributes_for(:product)}.to change(Product, :count).by(1)
+      expect{subject}.to change(Product, :count).by(1)
     end
 
   end
 
   context 'PUT #update' do
+
+    subject {
+      put :update, id: @producttwo, product: @updated_attributes
+    }
+
     before do
       @producttwo = FactoryGirl.create(:product)
       @updated_attributes = { :name => "Classic Bike"}
-      put :update, id: @producttwo, product: @updated_attributes
-      @producttwo.reload
+      subject
     end
+
     
     it 'redirects to single product overview' do
         expect(response).to redirect_to(product_path)
@@ -92,15 +117,14 @@ describe ProductsController, :type => :controller do
 
 
     it 'updated name successfully' do
-        expect(@producttwo).to have_attributes(:name => "Classic Bike")
+        expect(@producttwo.reload).to have_attributes(:name => "Classic Bike")
     end
 
   end
 
   context 'DELETE #destroy' do
     before :each do
-      @productthree = FactoryGirl.create(:product)
-      
+      @productthree = FactoryGirl.create(:product)     
     end
 
     it 'deletes the product' do
@@ -112,9 +136,6 @@ describe ProductsController, :type => :controller do
         expect(response).to redirect_to(products_path)
     end
 
-
   end
-
-
 
 end
